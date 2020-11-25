@@ -45,22 +45,11 @@ public class Player : MonoBehaviour
     
     void Start()
     {
-        // score = 0;
         _isGrounded = true;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         curSpeed = speed;
         curJumpForce = jumpForce;
-        // gameIsOver = false;
-        // lowerScreenBound = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
-        // Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,0));
-        // Vector3 lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        // leftScreenBound = lowerLeft.x;
-        // upperScreenBound = stageDimensions.y;
-        // rightScreenBound = stageDimensions.x;
-        // lowerScreenBound = lowerLeft.y;
-        // Debug.Log(stageDimensions+" &&height");
-        
     }
 
     
@@ -85,22 +74,13 @@ public class Player : MonoBehaviour
         {
             anim.SetTrigger("right");
         }
-
-    
-        // transform.localRotation = Quaternion.Euler(0, moveInput < 0 ? 180 : 0, 0);
-        // rb.velocity = new Vector2(moveInput * curSpeed, rb.velocity.y);
         rb.AddForce(moveInput*curSpeed*Vector2.right);
     }
 
     private void jumpMovement()
     {
         _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGraund);
-
-        // if (go.transform.position.y < lowerScreenBound)
-        // {
-        //     Debug.Log("game is over");
-        // }
-
+        
         if (Input.GetKey(KeyCode.Space))
         {
 
@@ -111,17 +91,7 @@ public class Player : MonoBehaviour
             
             rb.velocity = Vector2.up * jumpFactor;
         }
-        //
-        // if (rb.velocity.y < 0 )
-        // {
-        //     rb.velocity += Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime *  Vector2.up;
-        // }
-        // else if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     rb.velocity += Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime *  Vector2.up;
-        //
-        // }
-        //
+
         if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             isJumping = true;
@@ -151,24 +121,6 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("ice"))    //todo: change
-        {
-            Debug.Log("on ice");
-            curSpeed = 3 * speed;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag.Equals("ice"))
-        {
-            Debug.Log("nottt ice");
-    
-            curSpeed = speed;
-        }   
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -181,40 +133,13 @@ public class Player : MonoBehaviour
 
         if (!isDead)
         {
-            
             if (other.gameObject.tag.Equals("bow"))
             {
                 GameController.instance.scoring();
                 Destroy(other.gameObject);
             }
-
-            else if (other.gameObject.tag.Equals("gum"))
-            {
-                curJumpForce = 0;
-            }
-            
-            
         }
-
-        
-        // else if (other.gameObject.tag.Equals("ice"))
-        // {
-        //     curSpeed = 3 * speed;
-        // }
-        
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag.Equals("gum"))
-        {
-            curJumpForce = jumpForce;
-        }
-        
-        // else if (other.gameObject.tag.Equals("ice"))
-        // {
-        //     curSpeed = speed;
-        // }
-    }
 
 }

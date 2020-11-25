@@ -5,12 +5,7 @@ using UnityEngine;
 public class CameaMovement : MonoBehaviour
 {
     public float speed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +13,5 @@ public class CameaMovement : MonoBehaviour
         {
             transform.position += speed *Time.deltaTime*Vector3.up; 
         }
-        
     }
 }

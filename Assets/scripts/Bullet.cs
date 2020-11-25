@@ -21,9 +21,7 @@ public class Bullet : MonoBehaviour
         if (b != null)
         {
             b.wasShot();
-            Debug.Log("was Shot");
             Destroy(gameObject);
-
         }
 
     }
