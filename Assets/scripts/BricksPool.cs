@@ -61,9 +61,9 @@ public class BricksPool : MonoBehaviour
         int b = Random.Range(0, 2);
         if (b == 1)
         {
-            float x = Random.Range(0, size);
+            float x = Random.Range(-size/2f, size/2f);
             GameObject pascal = (GameObject) Instantiate(pascalPrefab, 
-                new Vector2(xPos - size/2f + x, lastY+0.53f), Quaternion.identity);
+                new Vector2(xPos + x, lastY+0.53f), Quaternion.identity);
         }
         
     }

@@ -6,43 +6,26 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public bool isDead = false;
     private Animator anim;
-    public Camera mainCamera;
-    
-    
-    
     private Rigidbody2D rb;
+    public Transform feetPos;
+    public LayerMask whatIsGraund;
+    public bool isDead = false;
+    private bool _isGrounded;
+    
     public float speed;
     public float curSpeed;
 
-    private bool _isGrounded;
-    public Transform feetPos;
-    public float checkRadius;
-    public LayerMask whatIsGraund;
     public float jumpForce;
     public float curJumpForce;
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
-    // private int score;
-    private bool onGum;
-    private float lowerScreenBound;
-    private float upperScreenBound;
-    private float rightScreenBound;
-    private float leftScreenBound;
-    public Text scoreText;
-
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
-
     public float jumpFactor;
-    // private Vector3 stageDimensions;
-    // private bool gameStarted;
+    
+    public float checkRadius;
 
-    
-    
-    
+
     void Start()
     {
         _isGrounded = true;

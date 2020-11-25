@@ -51,6 +51,11 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
+    public void winning()
+    {
+        
+    }
+
     public void playerDied()
     {
         gameOver = true;
