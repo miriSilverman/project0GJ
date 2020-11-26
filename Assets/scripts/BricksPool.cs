@@ -50,10 +50,10 @@ public class BricksPool : MonoBehaviour
     private void _locateBrick(int i)
     {
         float xPos = Random.Range(-7, 7);
-        lastY += 3.5f;
+        lastY += 4f;
         bricks[i] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, lastY), Quaternion.identity);
         float size = Random.Range(lowerBoundSizeOfBrick, upperBoundSizeOfBrick);
-        bricks[i].transform.localScale = new Vector3(size, brickHeight, 1);
+        // bricks[i].transform.localScale = new Vector3(size, brickHeight, 1);
         
         bricks[i].GetComponent<Renderer>().enabled = true;
         bricks[i].GetComponent<Collider2D>().enabled = true;
@@ -63,7 +63,7 @@ public class BricksPool : MonoBehaviour
         {
             float x = Random.Range(-size/2f, size/2f);
             GameObject pascal = (GameObject) Instantiate(pascalPrefab, 
-                new Vector2(xPos + x, lastY+0.53f), Quaternion.identity);
+                new Vector2(xPos + x, lastY+0.8f), Quaternion.identity);
         }
         
     }

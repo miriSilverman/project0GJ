@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public float jumpFactor;
     
     public float checkRadius;
+    private bool moveRight=true;
 
 
     void Start()
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     void Update(){
         if (!isDead)
         {
+            anim.SetBool("moveRight", moveRight);
             sidesMovement();
             jumpMovement();
         }
@@ -51,12 +53,15 @@ public class Player : MonoBehaviour
         float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
         if (moveInput < 0)
         {
-            anim.SetTrigger("left");
+            moveRight = false;
+            // anim.SetTrigger("left");
         }
         else
         {
-            anim.SetTrigger("right");
+            moveRight = true;
+            // anim.SetTrigger("right");
         }
+        // anim.SetBool("moveRight", moveRight);
         rb.AddForce(moveInput*curSpeed*Vector2.right);
     }
 
@@ -69,7 +74,7 @@ public class Player : MonoBehaviour
 
             GameController.instance.gameStarted = true;
             
-            anim.SetTrigger("centered");
+            // anim.SetTrigger("centered");
 
             
             rb.velocity = Vector2.up * jumpFactor;
