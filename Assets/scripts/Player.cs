@@ -82,8 +82,6 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
             
             // anim.SetBool("moveRight", moveRight);
-   
-            
           
         }
     }
@@ -91,33 +89,31 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-
-        if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (!GameController.instance.gameOver)
         {
-            
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isJumping)
-        {
-            if (jumpTimeCounter > 0)
+            _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+            if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
                 rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
             }
-            else
+
+            if (Input.GetKey(KeyCode.Space) && isJumping)
+            {
+                if (jumpTimeCounter > 0)
+                {
+                    rb.velocity = Vector2.up * jumpForce;
+                    jumpTimeCounter -= Time.deltaTime;
+                }else
+                {
+                    isJumping = false;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 isJumping = false;
             }
-
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
         }
     }
 
