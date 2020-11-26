@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BricksPool : MonoBehaviour
@@ -12,9 +13,11 @@ public class BricksPool : MonoBehaviour
     private int lowestBrick = 0;
     private float timeSinceLastRelocation = 0f;
     public float timeBetweenRelocations = 5f;
-    public float lowerBoundSizeOfBrick = 4.716518f;
-    public float upperBoundSizeOfBrick = 7.251686f;
-    private float brickHeight = 0.6982102f;
+  
+    
+    // public float lowerBoundSizeOfBrick = 4.716518f;
+    // public float upperBoundSizeOfBrick = 7.251686f;
+    // private float brickHeight = 0.6982102f;
     
     
     
@@ -23,11 +26,15 @@ public class BricksPool : MonoBehaviour
     void Start()
     {
         bricks = new GameObject[numOfBricks];
-        bricks[0] = (GameObject) Instantiate(brickPrefab, new Vector2(-1f, -7.89f), Quaternion.identity);
-        // bricks[0].transform.localScale = new Vector3(14.04494f, brickHeight, 1);
-        SpriteRenderer renderer = bricks[0].GetComponent<SpriteRenderer>();
         
-        renderer.size = new Vector2(16f, renderer.size.y);
+        float xPos = -1f;
+        float yPos = -7.89f;
+        float brickSize = 16f;
+        bricks[0] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, yPos), Quaternion.identity);
+        SpriteRenderer renderer = bricks[0].GetComponent<SpriteRenderer>();
+        renderer.size = new Vector2(brickSize, renderer.size.y);
+        
+        
         for (int i = 1; i < numOfBricks; i++)
         {
             _locateBrick(i);
@@ -61,7 +68,6 @@ public class BricksPool : MonoBehaviour
         renderer.size = new Vector2(Random.Range(4f, 7f), renderer.size.y);
         
         renderer.enabled = true;
-        // bricks[i].GetComponent<Collider2D>().enabled = true;
         float size = renderer.size.x;
 
         locatePascal(size, xPos);
@@ -79,11 +85,9 @@ public class BricksPool : MonoBehaviour
 
     private void relocateLowestBrick()
     {
-        // _locateBrick(lowestBrick);
         float xPos = Random.Range(-7, 7);
         lastY += Random.Range(2f, 3f);    //random distance between bricks
         bricks[lowestBrick].transform.position = new Vector2(xPos, lastY);
-        // bricks[i] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, lastY), Quaternion.identity);
         SpriteRenderer renderer = bricks[lowestBrick].GetComponent<SpriteRenderer>();
         
         renderer.size = new Vector2(Random.Range(4f, 7f), renderer.size.y);
