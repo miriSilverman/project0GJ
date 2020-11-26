@@ -12,9 +12,12 @@ public class GameController : MonoBehaviour
 
     public Text scoreText;
     public GameObject gameOverText;
+    public GameObject winningText;
     public bool gameOver = false;
     public bool gameStarted = false;
     private int score = 0;
+    public int winningScore = 5;
+    
 
 
     private void Awake()
@@ -49,11 +52,16 @@ public class GameController : MonoBehaviour
         
         score++;
         scoreText.text = "Score: " + score.ToString();
+        if (score >= winningScore)
+        {
+            winning();
+        }
     }
 
     public void winning()
     {
-        
+        gameOver = true;
+        winningText.SetActive(true);
     }
 
     public void playerDied()
