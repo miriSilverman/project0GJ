@@ -14,14 +14,11 @@ public class Player : MonoBehaviour
     private bool _isGrounded;
     
     public float speed;
-    // public float curSpeed;
 
     public float jumpForce;
-    // public float curJumpForce;
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
-    // public float jumpFactor;
     
     public float checkRadius;
     private bool moveRight;
@@ -69,6 +66,8 @@ public class Player : MonoBehaviour
     {
         if (!GameController.instance.gameOver)
         {
+            Debug.Log("he ");
+
             float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
             // if (moveInput < -Mathf.Epsilon)
             // {
@@ -78,19 +77,22 @@ public class Player : MonoBehaviour
             // {
             //     moveRight = true;
             // }
-            
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-            
+            // Debug.Log("moveInput "+ moveInput);
+            // rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            rb.AddForce(moveInput*speed*Vector2.right);
             // anim.SetBool("moveRight", moveRight);
           
         }
     }
 
-
+    
     private void Update()
     {
         if (!GameController.instance.gameOver)
         {
+            float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
             _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
             if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
@@ -98,7 +100,7 @@ public class Player : MonoBehaviour
                 jumpTimeCounter = jumpTime;
                 rb.velocity = Vector2.up * jumpForce;
             }
-
+    
             if (Input.GetKey(KeyCode.Space) && isJumping)
             {
                 if (jumpTimeCounter > 0)
@@ -116,63 +118,9 @@ public class Player : MonoBehaviour
             }
         }
     }
-
     
     
-    //
-    // private void sidesMovement()
-    // {
-    //     float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
-    //     if (moveInput < -Mathf.Epsilon)
-    //     {
-    //         moveRight = false;
-    //     }
-    //     else if(moveInput > Mathf.Epsilon)
-    //     {
-    //         moveRight = true;
-    //     }
-    //     // else
-    //     // {
-    //     //     anim.SetTrigger("centered");
-    //     // }
-    //     // anim.SetBool("moveRight", moveRight);
-    //     rb.AddForce(moveInput*curSpeed*Vector2.right);
-    // }
-    //
-    // private void jumpMovement()
-    // {
-    //     _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGraund);
-    //
-    //     if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
-    //     {
-    //         isJumping = true;
-    //         jumpTimeCounter = jumpTime;
-    //         rb.velocity = Vector2.up * (curJumpForce + rb.velocity.magnitude * jumpFactor);
-    //     }
-    //     
-    //     if (Input.GetKey(KeyCode.Space) && isJumping)
-    //     {
-    //         
-    //         if (jumpTimeCounter > 0)
-    //         {
-    //             rb.velocity = Vector2.up * curJumpForce;
-    //             jumpTimeCounter -= Time.deltaTime;
-    //         }
-    //         else
-    //         {
-    //             isJumping = false;
-    //         }
-    //     
-    //     }
-    //     
-    //     if (Input.GetKeyUp(KeyCode.Space))
-    //     {
-    //         isJumping = false;
-    //     }
-    //
-    // }
-
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<LowerScreenBound>())
@@ -194,3 +142,63 @@ public class Player : MonoBehaviour
 
 
 }
+
+
+
+
+
+
+
+//
+// private void sidesMovement()
+// {
+//     float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
+//     if (moveInput < -Mathf.Epsilon)
+//     {
+//         moveRight = false;
+//     }
+//     else if(moveInput > Mathf.Epsilon)
+//     {
+//         moveRight = true;
+//     }
+//     // else
+//     // {
+//     //     anim.SetTrigger("centered");
+//     // }
+//     // anim.SetBool("moveRight", moveRight);
+//     rb.AddForce(moveInput*curSpeed*Vector2.right);
+// }
+//
+// private void jumpMovement()
+// {
+//     _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGraund);
+//
+//     if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
+//     {
+//         isJumping = true;
+//         jumpTimeCounter = jumpTime;
+//         rb.velocity = Vector2.up * (curJumpForce + rb.velocity.magnitude * jumpFactor);
+//     }
+//     
+//     if (Input.GetKey(KeyCode.Space) && isJumping)
+//     {
+//         
+//         if (jumpTimeCounter > 0)
+//         {
+//             rb.velocity = Vector2.up * curJumpForce;
+//             jumpTimeCounter -= Time.deltaTime;
+//         }
+//         else
+//         {
+//             isJumping = false;
+//         }
+//     
+//     }
+//     
+//     if (Input.GetKeyUp(KeyCode.Space))
+//     {
+//         isJumping = false;
+//     }
+//
+// }
+
