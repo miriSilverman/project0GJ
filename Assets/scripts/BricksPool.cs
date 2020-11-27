@@ -31,7 +31,7 @@ public class BricksPool : MonoBehaviour
         // float xPos = -1f;
         // float yPos = -7.89f;
         float yPos = -3.481f;
-        float brickSize = 16f;
+        float brickSize = 10f;
         bricks[0] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, yPos), Quaternion.identity);
         SpriteRenderer renderer = bricks[0].GetComponent<SpriteRenderer>();
         renderer.size = new Vector2(brickSize, renderer.size.y);

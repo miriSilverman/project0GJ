@@ -22,9 +22,10 @@ public class Player : MonoBehaviour
     private bool isJumping = false;
     
     public float checkRadius = 0.3f;
-    private bool moveRight = true;
+    // private bool moveRight = true;
+    private int direction;
 
-    public Camera mainCamera;
+    // public Camera mainCamera;
     private Vector2 screenBorders;
     private float objWidth;
     private float objHeight;
@@ -41,7 +42,8 @@ public class Player : MonoBehaviour
         // float cameraPos = mainCamera.transform.position.x;
         // float cameraSize = mainCamera.orthographicSize;
         // screenBorders = new Vector2(cameraPos - cameraSize/2, cameraPos +cameraSize/2);
-       
+
+        direction = 1;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -105,40 +107,53 @@ public class Player : MonoBehaviour
         if (!GameController.instance.gameOver)
         {
             float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
+            if (moveInput < -Mathf.Epsilon)
+            {
+                 direction= 1;
+            }
+            else if(moveInput > Mathf.Epsilon)
+            {
+                direction = 2;
+            }
+            anim.SetInteger("direction", direction);
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-
-            _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-            if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                // GameController.instance.gameStarted = true;
-                isJumping = true;
-                jumpTimeCounter = jumpTime;
-                rb.velocity = Vector2.up * jumpForce;
-            }
             
-            if (Input.GetKey(KeyCode.Space) && isJumping)
+            jump();
+        }
+    }
+
+    private void jump()
+    {
+        _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            GameController.instance.gameStarted = true;
+            direction = 3;
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * jumpForce;
+        }
+            
+        if (Input.GetKey(KeyCode.Space) && isJumping)
+        {
+            if (jumpTimeCounter > 0)
             {
-                if (jumpTimeCounter > 0)
-                {
-                    rb.velocity = Vector2.up * jumpForce;
-                    jumpTimeCounter -= Time.deltaTime;
-                }else
-                {
-                    isJumping = false;
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.Space))
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }else
             {
                 isJumping = false;
             }
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
     }
-    
-    
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<LowerScreenBound>())
+        if (other.gameObject.CompareTag("LowerBound"))
         {
             isDead = true;
             rb.velocity = Vector2.zero;
