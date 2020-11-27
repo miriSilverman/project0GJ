@@ -33,10 +33,10 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        screenBorders = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width,
-                Screen.height, Camera.main.transform.position.z));
-        objWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x / 2;
-        objHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
+        // screenBorders = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width,
+        //         Screen.height, Camera.main.transform.position.z));
+        // objWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x / 2;
+        // objHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
         
         // float cameraPos = mainCamera.transform.position.x;
         // float cameraSize = mainCamera.orthographicSize;
@@ -91,13 +91,13 @@ public class Player : MonoBehaviour
     //     }
     // }
 
-    private void LateUpdate()
-    {
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, screenBorders.x *-1 + objWidth, screenBorders.x - objWidth);
-        pos.y = Mathf.Clamp(pos.y, screenBorders.y*-1 + objHeight, screenBorders.y - objHeight);
-        transform.position = pos;
-    }
+    // private void LateUpdate()
+    // {
+    //     Vector3 pos = transform.position;
+    //     pos.x = Mathf.Clamp(pos.x, screenBorders.x *-1 + objWidth, screenBorders.x - objWidth);
+    //     pos.y = Mathf.Clamp(pos.y, screenBorders.y*-1 + objHeight, screenBorders.y - objHeight);
+    //     transform.position = pos;
+    // }
     
 
     private void Update()

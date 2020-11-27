@@ -27,13 +27,15 @@ public class BricksPool : MonoBehaviour
     {
         bricks = new GameObject[numOfBricks];
         
-        float xPos = -1f;
-        float yPos = -7.89f;
+        float xPos = -2.214f;
+        // float xPos = -1f;
+        // float yPos = -7.89f;
+        float yPos = -3.481f;
         float brickSize = 16f;
         bricks[0] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, yPos), Quaternion.identity);
         SpriteRenderer renderer = bricks[0].GetComponent<SpriteRenderer>();
         renderer.size = new Vector2(brickSize, renderer.size.y);
-        
+        lastY = yPos;
         
         for (int i = 1; i < numOfBricks; i++)
         {
@@ -60,12 +62,13 @@ public class BricksPool : MonoBehaviour
 
     private void _locateBrick(int i)
     {
-        float xPos = Random.Range(-7, 7);
-        lastY += Random.Range(2f, 3f);    //random distance between bricks
+        float xPos = Random.Range(-5.58f, 0.17f);
+        // float xPos = Random.Range(-7, 7);
+        lastY += Random.Range(0.4f, 1.1f);    //random distance between bricks
         bricks[i] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, lastY), Quaternion.identity);
         SpriteRenderer renderer = bricks[i].GetComponent<SpriteRenderer>();
         
-        renderer.size = new Vector2(Random.Range(4f, 7f), renderer.size.y);
+        renderer.size = new Vector2(Random.Range(2f, 2.4f), renderer.size.y);
         
         // renderer.enabled = true;
         float size = renderer.size.x;
@@ -79,18 +82,18 @@ public class BricksPool : MonoBehaviour
         {
             float x = Random.Range(-size / 2f, size / 2f);
             GameObject pascal = (GameObject) Instantiate(pascalPrefab,
-                new Vector2(xPos + x, lastY + 0.8f), Quaternion.identity);
+                new Vector2(xPos + x, lastY + 0.3f), Quaternion.identity);
         }
     }
 
     private void relocateLowestBrick()
     {
-        float xPos = Random.Range(-7, 7);
-        lastY += Random.Range(2f, 3f);    //random distance between bricks
+        float xPos = Random.Range(-5.58f, 0.17f);
+        lastY += Random.Range(0.4f, 1.1f);    //random distance between bricks
         bricks[lowestBrick].transform.position = new Vector2(xPos, lastY);
         SpriteRenderer renderer = bricks[lowestBrick].GetComponent<SpriteRenderer>();
         
-        renderer.size = new Vector2(Random.Range(4f, 7f), renderer.size.y);
+        renderer.size = new Vector2(Random.Range(2f, 2.4f), renderer.size.y);
         
         // renderer.enabled = true;
         // bricks[lowestBrick].GetComponent<Collider2D>().enabled = true;
