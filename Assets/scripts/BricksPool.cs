@@ -8,7 +8,7 @@ public class BricksPool : MonoBehaviour
     private GameObject[] bricks;
     public GameObject brickPrefab;
     public GameObject pascalPrefab;
-    public int numOfBricks = 8;
+    public int numOfBricks = 20;
     public float lastY = -4.89f;
     private int lowestBrick = 0;
     private float timeSinceLastRelocation = 0f;
@@ -67,7 +67,7 @@ public class BricksPool : MonoBehaviour
         
         renderer.size = new Vector2(Random.Range(4f, 7f), renderer.size.y);
         
-        renderer.enabled = true;
+        // renderer.enabled = true;
         float size = renderer.size.x;
 
         locatePascal(size, xPos);
@@ -92,8 +92,8 @@ public class BricksPool : MonoBehaviour
         
         renderer.size = new Vector2(Random.Range(4f, 7f), renderer.size.y);
         
-        renderer.enabled = true;
-        bricks[lowestBrick].GetComponent<Collider2D>().enabled = true;
+        // renderer.enabled = true;
+        // bricks[lowestBrick].GetComponent<Collider2D>().enabled = true;
         float size = renderer.size.x;
 
         locatePascal(size, xPos);
