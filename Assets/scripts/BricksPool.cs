@@ -80,9 +80,9 @@ public class BricksPool : MonoBehaviour
     {
         if (Random.Range(0, 2) == 1)
         {
-            float x = Random.Range(-size / 2f, size / 2f);
+            float x = Random.Range(-size / 2f + 0.2f, size / 2f -0.2f);
             GameObject pascal = (GameObject) Instantiate(pascalPrefab,
-                new Vector2(xPos + x, lastY + 0.3f), Quaternion.identity);
+                new Vector2(xPos + x, lastY + 0.272f), Quaternion.identity);
         }
     }
 
