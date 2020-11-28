@@ -13,6 +13,7 @@ public class BricksPool : MonoBehaviour
     private int lowestBrick = 0;
     private float timeSinceLastRelocation = 0f;
     public float timeBetweenRelocations = 5f;
+    private float lastX = -2.82f;
   
     
     // public float lowerBoundSizeOfBrick = 4.716518f;
@@ -62,15 +63,22 @@ public class BricksPool : MonoBehaviour
 
     private void _locateBrick(int i)
     {
-        float xPos = Random.Range(-5.58f, 0.17f);
-        // float xPos = Random.Range(-7, 7);
+        // float xPos = Random.Range(-5.58f, 0.17f);
+        
+        float xPos = lastX + Random.Range(-3f, 3f);
+        while (xPos > 0.17f || xPos < -5.85f)
+        {
+            xPos = lastX + Random.Range(-3f, 3f);
+
+        }
+
+        lastX = xPos;
         lastY += Random.Range(0.4f, 1.1f);    //random distance between bricks
         bricks[i] = (GameObject) Instantiate(brickPrefab, new Vector2(xPos, lastY), Quaternion.identity);
         SpriteRenderer renderer = bricks[i].GetComponent<SpriteRenderer>();
         
         renderer.size = new Vector2(Random.Range(2f, 2.4f), renderer.size.y);
         
-        // renderer.enabled = true;
         float size = renderer.size.x;
 
         locatePascal(size, xPos);
@@ -88,15 +96,21 @@ public class BricksPool : MonoBehaviour
 
     private void relocateLowestBrick()
     {
-        float xPos = Random.Range(-5.58f, 0.17f);
+        // float xPos = Random.Range(-5.58f, 0.17f);
+        float xPos = lastX + Random.Range(-3f, 3f);
+        while (xPos > 0.17f || xPos < -5.85f)
+        {
+            xPos = lastX + Random.Range(-3f, 3f);
+
+        }
+
+        lastX = xPos;
         lastY += Random.Range(0.4f, 1.1f);    //random distance between bricks
         bricks[lowestBrick].transform.position = new Vector2(xPos, lastY);
         SpriteRenderer renderer = bricks[lowestBrick].GetComponent<SpriteRenderer>();
         
         renderer.size = new Vector2(Random.Range(2f, 2.4f), renderer.size.y);
         
-        // renderer.enabled = true;
-        // bricks[lowestBrick].GetComponent<Collider2D>().enabled = true;
         float size = renderer.size.x;
 
         locatePascal(size, xPos);
