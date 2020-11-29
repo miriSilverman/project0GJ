@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        direction = 1;
+        direction = 3;    // straight - facing the camera
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -43,11 +43,11 @@ public class Player : MonoBehaviour
             float moveInput = Input.GetAxisRaw("Horizontal");    // left = -1; right = 1;
             if (moveInput < -Mathf.Epsilon)
             {
-                 direction= 1;
+                 direction = 1; // facing left
             }
             else if(moveInput > Mathf.Epsilon)
             {
-                direction = 2;
+                direction = 2;    // facing right
             }
             anim.SetInteger("direction", direction);
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
@@ -56,14 +56,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    // player jump. can only jump when touching ground, and has a fixed time to continue its jump
+    // while keeps pressing the jump key
     private void jump()
     {
-        _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround); // check if touching ground
         if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             GameController.instance.gameStarted = true;
             jumpSound.Play();
-            direction = 3;
+            direction = 3;    // facing the camera
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
                 isJumping = false;
             }
         }
+        
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
@@ -88,7 +91,7 @@ public class Player : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("LowerBound"))
+        if (other.gameObject.CompareTag("LowerBound"))    // touching lower bound -> game is over
         {
             isDead = true;
             rb.velocity = Vector2.zero;
@@ -97,7 +100,7 @@ public class Player : MonoBehaviour
 
         if (!isDead)
         {
-            if (other.gameObject.tag.Equals("bow"))
+            if (other.gameObject.tag.Equals("bow"))    // takes a pascal "diamond"
             {
                 GameController.instance.scoring();
                 Destroy(other.gameObject);
