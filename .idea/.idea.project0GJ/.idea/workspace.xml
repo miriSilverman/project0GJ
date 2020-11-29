@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="674ed4ca-aa0a-40c7-8c41-5ca05bd55444" name="Default Changelist" comment="done game">
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/BricksPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/BricksPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/CameaMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/CameaMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Player.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.2.1/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.recorder@2.4.0-preview.1/Editor/ProRes/ProResEncoderPlugin.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/shooting.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameaMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/gameOver.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/LowerScreenBound.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/block.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/BackGroundMusic.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/BricksPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/CameaMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/GameController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kdPAfHOEqkblEDjZslzjljXnCw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3002736" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="674ed4ca-aa0a-40c7-8c41-5ca05bd55444" name="Default Changelist" comment="" />
+      <created>1606027353159</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606027353159</updated>
+      <workItem from="1606027361908" duration="11148000" />
+      <workItem from="1606071370707" duration="1996000" />
+      <workItem from="1606073638914" duration="3214000" />
+      <workItem from="1606111359193" duration="5647000" />
+      <workItem from="1606133087660" duration="6181000" />
+      <workItem from="1606150081408" duration="6129000" />
+      <workItem from="1606194193056" duration="62788000" />
+      <workItem from="1606411099003" duration="1702000" />
+      <workItem from="1606451227792" duration="16257000" />
+      <workItem from="1606587271454" duration="5541000" />
+      <workItem from="1606627692992" duration="6309000" />
+      <workItem from="1606639003819" duration="800000" />
+      <workItem from="1606643353402" duration="205000" />
+    </task>
+    <task id="LOCAL‎00001" summary="miri">
+      <created>1606325720130</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1606325720130</updated>
+    </task>
+    <task id="LOCAL‎00002" summary="works pretty good">
+      <created>1606337217315</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1606337217315</updated>
+    </task>
+    <task id="LOCAL‎00003" summary="works pretty good">
+      <created>1606337751729</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1606337751729</updated>
+    </task>
+    <task id="LOCAL‎00004" summary="works pretty good">
+      <created>1606377358211</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1606377358211</updated>
+    </task>
+    <task id="LOCAL‎00005" summary="works pretty good">
+      <created>1606392179003</created>
+      <option name="number" value="LOCAL‎00005" />
+      <option name="presentableId" value="LOCAL‎00005" />
+      <updated>1606392179003</updated>
+    </task>
+    <task id="LOCAL‎00006" summary="works pretty good">
+      <created>1606400047970</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1606400047970</updated>
+    </task>
+    <task id="LOCAL‎00007" summary="works pretty good">
+      <created>1606401600639</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1606401600639</updated>
+    </task>
+    <task id="LOCAL‎00008" summary="works pretty good">
+      <created>1606405041908</created>
+      <option name="number" value="LOCAL‎00008" />
+      <option name="presentableId" value="LOCAL‎00008" />
+      <updated>1606405041908</updated>
+    </task>
+    <task id="LOCAL‎00009" summary="miri">
+      <created>1606459490399</created>
+      <option name="number" value="LOCAL‎00009" />
+      <option name="presentableId" value="LOCAL‎00009" />
+      <updated>1606459490399</updated>
+    </task>
+    <task id="LOCAL‎00010" summary="miri">
+      <created>1606474076482</created>
+      <option name="number" value="LOCAL‎00010" />
+      <option name="presentableId" value="LOCAL‎00010" />
+      <updated>1606474076482</updated>
+    </task>
+    <task id="LOCAL‎00011" summary="done for now">
+      <created>1606483763845</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1606483763845</updated>
+    </task>
+    <task id="LOCAL‎00012" summary="added menu">
+      <created>1606596573925</created>
+      <option name="number" value="LOCAL‎00012" />
+      <option name="presentableId" value="LOCAL‎00012" />
+      <updated>1606596573925</updated>
+    </task>
+    <task id="LOCAL‎00013" summary="added menu">
+      <created>1606598070325</created>
+      <option name="number" value="LOCAL‎00013" />
+      <option name="presentableId" value="LOCAL‎00013" />
+      <updated>1606598070325</updated>
+    </task>
+    <task id="LOCAL‎00014" summary="done game">
+      <created>1606634237289</created>
+      <option name="number" value="LOCAL‎00014" />
+      <option name="presentableId" value="LOCAL‎00014" />
+      <updated>1606634237289</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="works pretty good" />
+    <MESSAGE value="miri" />
+    <MESSAGE value="done for now" />
+    <MESSAGE value="added menu" />
+    <MESSAGE value="done game" />
+    <option name="LAST_COMMIT_MESSAGE" value="done game" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="646" y="310" key="Github.ShareDialog" timestamp="1606321984402">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="646" y="310" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1606321984402" />
+    <state x="359" y="118" key="Github.UntrackedFilesDialog" timestamp="1606322591782">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="359" y="118" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606322591782" />
+    <state width="1493" height="288" key="GridCell.Tab.0.bottom" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.0.center" timestamp="1606412814835">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606412814835" />
+    <state width="1493" height="288" key="GridCell.Tab.0.left" timestamp="1606412814835">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606412814835" />
+    <state width="1493" height="288" key="GridCell.Tab.0.right" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.1.center" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.1.left" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.1.right" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.2.bottom" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.2.center" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.2.left" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.2.right" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.3.bottom" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.3.center" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.3.left" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state width="1493" height="288" key="GridCell.Tab.3.right" timestamp="1606412814836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1606412814836" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1606319413035">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606319413035" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606634242938">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606634242938" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="rb.velocity" language="C#" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
